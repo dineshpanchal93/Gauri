@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include gauri *.css
+recursive-include gauri *.csv
+recursive-include gauri *.html
+recursive-include gauri *.ico
+recursive-include gauri *.js
+recursive-include gauri *.json
+recursive-include gauri *.md
+recursive-include gauri *.png
+recursive-include gauri *.py
+recursive-include gauri *.svg
+recursive-include gauri *.txt
+recursive-exclude gauri *.pyc
