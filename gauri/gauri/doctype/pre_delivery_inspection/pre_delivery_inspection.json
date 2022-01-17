@@ -1,0 +1,258 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-01-16 12:45:45.279577",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "naming_series",
+  "customer",
+  "dealer_code",
+  "vehicle_type",
+  "column_break_5",
+  "posting_date",
+  "posting_time",
+  "set_posting_time",
+  "vehicle_details_section",
+  "vehicle_identification_number",
+  "motor_id",
+  "key_no",
+  "column_break_16",
+  "controller_id",
+  "charger_id",
+  "color",
+  "inspection_parameter_section",
+  "functional_operation",
+  "under_vehicle",
+  "walkaround_pdi",
+  "road_test",
+  "section_break4",
+  "tech_name",
+  "technician_name",
+  "tech_sign",
+  "column_break_26",
+  "ser_man_name",
+  "service_manager_name",
+  "ser_sign"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "default": "{customer_name}",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "no_copy": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "PDI.YYYY",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Dealer Name",
+   "options": "Customer",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "dealer_code",
+   "fieldtype": "Data",
+   "label": "Dealer Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "Vehicle Type"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "PDI Date",
+   "no_copy": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "PDI Posting Time",
+   "no_copy": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.docstatus==0",
+   "fieldname": "set_posting_time",
+   "fieldtype": "Check",
+   "label": "Edit Posting Date & Time"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "vehicle_identification_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Identification Number",
+   "no_copy": 1,
+   "options": "Barcode",
+   "unique": 1
+  },
+  {
+   "fieldname": "motor_id",
+   "fieldtype": "Data",
+   "label": "Motor ID",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "key_no",
+   "fieldtype": "Data",
+   "label": "Key No."
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "controller_id",
+   "fieldtype": "Data",
+   "label": "Controller ID",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "charger_id",
+   "fieldtype": "Data",
+   "label": "Charger ID",
+   "options": "Barcode"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Color"
+  },
+  {
+   "fieldname": "inspection_parameter_section",
+   "fieldtype": "Section Break",
+   "label": "Inspection Parameter"
+  },
+  {
+   "fieldname": "functional_operation",
+   "fieldtype": "Table",
+   "label": "FUNCTIONAL OPERATION (Apply parking brake and switch \u2018ON\u2019)",
+   "options": "PDI FO"
+  },
+  {
+   "fieldname": "under_vehicle",
+   "fieldtype": "Table",
+   "label": "UNDER VEHICLE",
+   "options": "UV PDI"
+  },
+  {
+   "fieldname": "walkaround_pdi",
+   "fieldtype": "Table",
+   "label": "WALKAROUND INSPECTION (Start from the front and continue around vehicle in counterclockwise direction)",
+   "options": "WAI PDI"
+  },
+  {
+   "fieldname": "road_test",
+   "fieldtype": "Table",
+   "label": "ROAD TEST",
+   "options": "RT PDI"
+  },
+  {
+   "fieldname": "section_break4",
+   "fieldtype": "Section Break",
+   "label": "Approval Signature"
+  },
+  {
+   "fieldname": "tech_name",
+   "fieldtype": "Link",
+   "label": "From Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "tech_name.employee_name",
+   "fieldname": "technician_name",
+   "fieldtype": "Data",
+   "label": "Technician Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tech_sign",
+   "fieldtype": "Signature",
+   "label": "Technician\u2019s Sign"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ser_man_name",
+   "fieldtype": "Link",
+   "label": "From Employee",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "ser_man_name.employee_name",
+   "fieldname": "service_manager_name",
+   "fieldtype": "Data",
+   "label": "Service Manager Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ser_sign",
+   "fieldtype": "Signature",
+   "label": "Service Manager\u2019s Sign"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-01-17 14:28:18.141193",
+ "modified_by": "Administrator",
+ "module": "Gauri",
+ "name": "Pre Delivery Inspection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
